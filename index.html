@@ -9,7 +9,7 @@
 <body>
      <div class="container">
         <div class="cal">
-            <input type="text" placeholder="0" style="color: white;" id="os">
+            <input type="text"  style="color: white;" id="os">
             <button onclick="Clear()">CL</button>
             <button onclick="del()">DEL</button>
             <button onclick="display('%')">%</button>
@@ -50,9 +50,14 @@
            os.value="";
         }
         function Calculate()
-        {
-           os.value=eval(os.value);
-        }
+        { 
+           try{
+            os.value=eval(os.value);
+           }catch(err)
+           {
+            console.log('Infinity')
+           }
+         }
         
      </script>
 </body>
